@@ -40,7 +40,7 @@ function generateCV() {
 
     let nameField=document.getElementById('nameField').value;
 
-    let nameT1=document.getElementById('nameT1')
+    let nameT1=document.getElementById('nameT1');
 
     nameT1.innerHTML=nameField;
 
@@ -62,9 +62,9 @@ function generateCV() {
     document.getElementById('objectiveT').innerHTML=document.getElementById('objectiveField').value;
 
     //work exp
-    let wes=document.getElementsByClassName('weField')
+    let wes=document.getElementsByClassName('weField');
     
-    let str=" "
+    let str=" ";
 
     for(let e of wes)
         {
@@ -77,9 +77,9 @@ function generateCV() {
 
        
     //skills
-    let sks=document.getElementsByClassName('skField')
+    let sks=document.getElementsByClassName('skField');
     
-    let str1=" "
+    let str1=" ";
 
     for(let e of sks)
         {
@@ -88,10 +88,23 @@ function generateCV() {
 
     document.getElementById('skT').innerHTML=str1; 
 
+    
+    //image
+    let file=document.getElementById('imgField').files[0];
+    
+    //console.log(file);
+    
+    if (file) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = function() {
+            document.getElementById('imgTemplate').src = reader.result;
+        };
+    }
 
 
-    document.getElementById('cv-form').style.display='none'
-    document.getElementById('cv-template').style.display='block'
+    document.getElementById('cv-form').style.display='none';
+    document.getElementById('cv-template').style.display='block';
 
 
 }
