@@ -38,28 +38,38 @@ function addNewSKField() {
 
 function generateCV() {
 
-    let nameField=document.getElementById('nameField').value;
+    let selectedTemplate = document.getElementById('templateSelect').value;
 
-    let nameT1=document.getElementById('nameT1');
+    //retrieving values
+    let nameField = document.getElementById('nameField').value;
+    let contactField = document.getElementById('contactField').value;
+    let addressField = document.getElementById('addressField').value;
+    let linkedField = document.getElementById('linkedField').value;
+    let gitField = document.getElementById('gitField').value;
+    let blogField = document.getElementById('blogField').value;
+    let objectiveField = document.getElementById('objectiveField').value;
 
-    nameT1.innerHTML=nameField;
 
-    //direct
-    document.getElementById('nameT2').innerHTML=nameField;
+    //name
+    document.querySelector(`#${selectedTemplate} #nameT1`).innerHTML = nameField;
+    document.querySelector(`#${selectedTemplate} #nameT2`).innerHTML = nameField;
 
-    document.getElementById('contactT').innerHTML=document.getElementById('contactField').value;
 
-    document.getElementById('addressT').innerHTML=document.getElementById('addressField').value;
+    //contact n address
+    document.querySelector(`#${selectedTemplate} #contactT`).innerHTML = contactField;
+    document.querySelector(`#${selectedTemplate} #addressT`).innerHTML = addressField;
+
 
     //links
-    document.getElementById('linkedT').innerHTML=document.getElementById('linkedField').value;
+    document.querySelector(`#${selectedTemplate} #linkedT`).href = linkedField;
+    document.querySelector(`#${selectedTemplate} #gitT`).href = gitField;
+    document.querySelector(`#${selectedTemplate} #blogT`).href = blogField;
 
-    document.getElementById('gitT').innerHTML=document.getElementById('gitField').value;
 
-    document.getElementById('blogT').innerHTML=document.getElementById('blogField').value;
 
-    //objective
-    document.getElementById('objectiveT').innerHTML=document.getElementById('objectiveField').value;
+    //right side obj
+    document.querySelector(`#${selectedTemplate} #objectiveT`).innerHTML = objectiveField;
+
 
     //work exp
     let wes=document.getElementsByClassName('weField');
@@ -71,8 +81,9 @@ function generateCV() {
             str =str + `<li> ${e.value} </li>`;
         }
 
-        document.getElementById('weT').innerHTML=str; 
-
+        
+    document.querySelector(`#${selectedTemplate} #weT`).innerHTML = str;
+    
 
 
        
@@ -86,11 +97,13 @@ function generateCV() {
             str1 =str1 + `<li> ${e.value} </li>`;
         }
 
-    document.getElementById('skT').innerHTML=str1; 
+    document.querySelector(`#${selectedTemplate} #skT`).innerHTML = str1;
+
 
     
     //image
-    let file=document.getElementById('imgField').files[0];
+    let fileInput = document.getElementById('imgField');
+    let file = fileInput.files[0]; 
     
     //console.log(file);
     
@@ -98,13 +111,19 @@ function generateCV() {
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = function() {
-            document.getElementById('imgTemplate').src = reader.result;
+            document.querySelector(`#${selectedTemplate} .myimg`).src = reader.result;
         };
     }
 
-
+    
     document.getElementById('cv-form').style.display='none';
-    document.getElementById('cv-template').style.display='block';
+
+    
+    document.getElementById('template1').style.display='none';
+    document.getElementById('template2').style.display='none'; 
+
+    document.getElementById(selectedTemplate).style.display = 'block';
+
 
 
 }
