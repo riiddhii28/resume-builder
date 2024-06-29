@@ -16,7 +16,7 @@
 
 <div class="container" id="cv-form">
     <h1 class="text-center my-2">Resume Generator</h1>
-    <p class="text-center">By Riddhi Patel</p>
+    <p class="text-center">~By Riddhi Patel</p>
 
     <div class="row">
 
@@ -90,9 +90,16 @@
                 <div class="container text-center mt-2" id="skAddButton">
                     <button onclick="addNewSKField()" class="btn btn-primary btn-sm">Add</button>
                 </div>
-            </div>    
-
+            </div>  
             
+            <div class="form-group mt-5">
+                <label for="templateSelect">Choose Template Color</label>
+                <select id="templateSelect" class="form-control">
+                    <option value="template1">Template 1</option>
+                    <option value="template2">Template 2</option>
+                </select>
+            </div>
+           
 
         </div>
     
@@ -106,8 +113,8 @@
 
 
 
-   
-<div class="container" id="cv-template">
+<!-- template 1-->
+<div class="container template" id="template1" style="display:none;">
 
     <div class="row">
         <div class="col-md-4 text-center py-5 background">
@@ -117,7 +124,7 @@
                   src="Defaultprofile.jpg"
                   alt=""
                   class="img-fluid myimg"
-                  id="imgTemplate"
+                  id="imgField"
                 />
                  
                 <div class="container">
@@ -201,6 +208,110 @@
                 </div>
                
         </div>
+
+    </div>
+</div>        
+
+
+
+<!-- template 2-->
+<div class="container template" id="template2" style="display:none;">
+
+    <div class="row">
+        <div class="col-md-4 text-center py-5 background">
+
+                <!-- first col-->
+                <img
+                  src="Defaultprofile.jpg"
+                  alt=""
+                  class="img-fluid myimg"
+                  id="imgField"
+                />
+                 
+                <div class="container">
+                    <p id="nameT1">Riddhi Patel</p>
+                    <p id="contactT">+915462345326</p>
+                    <p id="addressT">100 ft road, Vasai(W), INDIA</p>
+
+                    <hr />
+                    <p id="linkedT"><a href="#1">https://www.linkedin.com/in/riddhi-patel28</a></p>
+
+                    <p id="gitT"><a href="#2">https://github.com/riiddhii28</a></p>
+
+                    <p id="blogT"><a href="#3">https://riiddhii.wordpress.com/</a></p>
+                </div>
+        </div> 
+            
+        <div class="col-md-8 py-5">
+                <!--second col-->
+
+                <h1 id="nameT2" class="text-center" style="font-weight: 980">Riddhi Patel</h1>
+                
+                <!-- objective card -->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita officia, totam earum culpa minus eius quam quaerat quia minima repellendus dolorum sit, reprehenderit quas necessitatibus ratione, ducimus natus in. Maiores vitae similique dolorem possimus voluptatem dolore molestiae, voluptates, porro corrupti deleniti ipsum repellendus quasi maxime cupiditate, rerum nemo cum exercitationem.</p>
+                    </div>
+                </div>
+
+                <!-- work exp card -->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <ul id="weT">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aut?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aut?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aut?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- skills card -->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <ul id="skT">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aut?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aut?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aut?
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">Print CV</button>
+
+                </div>
+               
+        </div>   
+        
+    </div>
+</div>        
       
 
 
