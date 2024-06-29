@@ -3,8 +3,20 @@
 
 } */
 
-#cv-template {
+/*
+.template {
     display: none;
+
+} */
+
+#template1 .background {
+    background-color: rgba(211, 211, 211, 0.518);
+
+} 
+
+#template2 .background {
+    background-color: rgb(86, 199, 237);
+
 
 } 
 
@@ -13,6 +25,3 @@
     width: 200px;
 }
 
-.background{
-    background-color: aqua;
-}
