@@ -15,3 +15,5 @@ This project is a Resume Builder developed during my internship at **Coding Raja
 1. Clone the repository:
    ```bash
    git clone https://github.com/riiddhii28/resume-builder.git
+
+2. Open index.html in your browser.
